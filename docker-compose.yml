@@ -1,0 +1,16 @@
+services:
+  cloud-finops-agent:
+    build: .
+    ports:
+      - "8102:8102"
+    environment:
+      APP_ENV: local
+      DATABASE_PATH: /app/data/finops.db
+      LLM_MODE: mock
+      CORS_ORIGINS: http://localhost:8102
+    volumes:
+      - finops-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  finops-data:

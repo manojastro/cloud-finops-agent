@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Evidence-first Cloud FinOps optimization dashboard">
+  <title>Strata · Cloud FinOps Agent</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">S</span><div><strong>STRATA</strong><small>CHANGE-RISK FINOPS</small></div></div>
+    <div class="top-meta"><span class="status-dot"></span><span>Local system ready</span><span id="mode" class="mode">MOCK / SYNTHETIC</span></div>
+  </header>
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">COST INTELLIGENCE / US-EAST-1</p>
+        <h1>Save the margin.<br><em>Protect the peak.</em></h1>
+        <p class="lede">An evidence trail from anomalous spend to a guarded, reversible infrastructure proposal.</p>
+      </div>
+      <div class="decision-card">
+        <div class="decision-head"><span>DECISION 001</span><span id="decision-status" class="pill amber">LOADING</span></div>
+        <h2 id="decision-title">Loading recommendation</h2>
+        <p>The cheapest static option is rejected when it breaches SLOs. Scheduled capacity is allowed only when the recurring peak day is derived from workload history and bound end to end.</p>
+        <div class="decision-actions">
+          <button id="approve-btn" class="primary">Approve safe proposal</button>
+          <button id="apply-btn" class="secondary" disabled>Simulate apply</button>
+        </div>
+        <p id="attestation" class="action-message">Approval attestation: pending reviewer decision.</p>
+        <p id="action-message" class="action-message" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section class="kpis" aria-label="Key financial metrics">
+      <article><span>MONTHLY CLOUD SPEND</span><strong id="spend">—</strong><small>2 observed resources</small></article>
+      <article><span>VALIDATED SAVINGS</span><strong id="validated">—</strong><small>42% of compute baseline</small></article>
+      <article><span>REALIZED SAVINGS</span><strong id="realized">—</strong><small>simulation measured</small></article>
+      <article><span>CHANGE RISK</span><strong id="risk">—</strong><small>approval required</small></article>
+    </section>
+
+    <section class="grid-two">
+      <article class="panel workload-panel">
+        <div class="panel-title"><div><p class="eyebrow">WORKLOAD EVIDENCE</p><h2>Average utilization hides a monthly cliff</h2></div><span class="badge">5 MONTHS</span></div>
+        <div class="chart" aria-label="CPU utilization: 18 percent average and 84 percent monthly peak">
+          <div class="guardrail" style="top:10%"><span>90% guardrail</span></div>
+          <div class="bars">
+            <div class="bar avg" style="height:18%"><span>18%</span><label>Average</label></div>
+            <div class="bar p95" style="height:41%"><span>41%</span><label>P95</label></div>
+            <div class="bar peak" style="height:84%"><span>84%</span><label id="peak-label">Observed peak</label></div>
+          </div>
+        </div>
+        <div class="evidence-note"><span class="pulse"></span><p><strong>Schedule evidence</strong><br><span id="peak-note">Loading workload-derived peak alignment…</span></p></div>
+      </article>
+
+      <article class="panel alternatives-panel">
+        <div class="panel-title"><div><p class="eyebrow">SAVINGS VS RELIABILITY</p><h2>Recommendation frontier</h2></div></div>
+        <div class="option rejected">
+          <div><span class="option-label">CHEAPEST</span><h3>Static m6i.large</h3><p id="unsafe-saving">Projected savings loading…</p></div>
+          <div class="risk-seal">BLOCKED<small>CRITICAL</small></div>
+        </div>
+        <div class="option selected">
+          <div><span class="option-label">VALIDATED</span><h3>Scheduled elastic capacity</h3><p id="safe-saving">Validated savings loading…</p></div>
+          <div class="risk-seal safe">PASS<small>MEDIUM</small></div>
+        </div>
+        <div class="frontier"><div class="frontier-fill"></div><span>Lower cost</span><span>Higher reliability</span></div>
+      </article>
+    </section>
+
+    <section class="grid-two lower">
+      <article class="panel">
+        <div class="panel-title"><div><p class="eyebrow">31-DAY SHADOW REPLAY</p><h2>SLO guardrails</h2></div><span id="validation-status" class="pill green">—</span></div>
+        <div id="guardrails" class="guardrail-list"></div>
+      </article>
+      <article class="panel code-panel">
+        <div class="panel-title"><div><p class="eyebrow">INFRASTRUCTURE AS CODE</p><h2>Review-only Terraform</h2></div><span class="badge">INERT</span></div>
+        <pre id="terraform">Loading proposal…</pre>
+      </article>
+    </section>
+
+    <section class="panel audit-panel">
+      <div class="panel-title"><div><p class="eyebrow">WHY THIS DECISION?</p><h2>Evidence-backed agent trail</h2></div><a href="/docs" target="_blank">OpenAPI ↗</a></div>
+      <div id="evidence" class="evidence-grid"></div>
+    </section>
+  </main>
+  <footer><span>STRATA / Cloud FinOps Agent</span><span>No real cloud changes · No shell execution · SQLite audit trail</span></footer>
+  <script src="/assets/app.js"></script>
+</body>
+</html>
